@@ -25,56 +25,51 @@ static struct {
     sg_bindings bind;
 } state;
 
-    // 1. set up vertex data (vertices)
-
 float vertices[] = {
+     // coords            // color
+    -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
 
-             // coords            // color
-            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-             0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f, 
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
 
-            -0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f, 
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
 
-            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+     0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
 
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
-             0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+    -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+     0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 
+     0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+    -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f,
 
-            -0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-             0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f, 
-             0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f,
-
-            -0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f
+    -0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,
+     0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f,
+     0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f,
+    -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f
 };
 
-sg_buffer vertex_buffer;
-sg_shader shd;
 // initializing shit
 void init(void) {
     sg_setup(&(sg_desc){
@@ -83,10 +78,9 @@ void init(void) {
     });
 
    
-    vertex_buffer = sg_make_buffer(&(sg_buffer_desc) { 
+    sg_buffer vertex_buffer = sg_make_buffer(&(sg_buffer_desc) { 
                 .data = SG_RANGE(vertices)
     });
-
 
     sg_shader shd = sg_make_shader(cube_shader_desc(sg_query_backend()));
 
@@ -129,26 +123,15 @@ void frame(void) {
     vs_params_t vs_params;
     const f32 time = (f32)(sapp_frame_duration()); 
    
-
-    #if 0
-    // 1. projection matrix
-    Mat4 proj = Perspective_RH_ZO(60.0f, 800.0f / 600.0f, 0.001f, 10.0f);
-    // 2. view matrix
-    Mat4 view = LookAt_RH(V3(0.0f,1.5f, 6.0f), V3(0.0f, 0.0f, 0.0f), V3(0.0f, 1.0f, 0.0f));
-    Mat4 view_translation = Translate(V3(0.0f, 0.0f, -3.0f + sinf(time)));
-    Mat4 view_zai = MulM4(view, view_translation);
-    Mat4 view_proj = MulM4(proj, view_zai);
-    // 3. model
-    Mat4 model_rotation = Rotate_RH(ToRad(90.0f) * time, V3(0.0f, 1.0f, 1.0f));
-    vs_params.mvp = MulM4(view_proj, model_rotation);
-    #endif
     // Transformation matrices
     #if 1
-    Mat4 projection_matrix = Perspective_RH_ZO(ToRad(45.0f), 800.0f / 600.0f , 0.01f, 100.0f); 
-    Mat4 view_matrix = LookAt_RH(V3(1.0f, 1.5f, -1.0f), V3(0.0f, 0.0f, 0.0f), V3(0.0f, 1.0f, 0.0f));
+    Mat4 projection_matrix = Perspective_RH_ZO(ToRad(45.0f), 800.0f / 600.0f , 0.01f, 100.0f);
+    // The position of the camera
+    Mat4 view_matrix = LookAt_RH(V3(5.0f, 1.0f, -0.5f), V3(0.0f, 0.0f, 0.0f), V3(0.0f, 1.0f, 0.0f));
     Mat4 view_proj = MulM4(projection_matrix, view_matrix);
     state.rx += 1.0f * time, state.ry += 2.0f * time;
-    // Model Matrix
+    
+    // Model Matrix <- Think of it as changing the rotation/position or scaling your player
     Mat4 rotate_x = Rotate_RH(state.rx, V3(1.0f, 0.0f, 0.0f));
     Mat4 rotate_y = Rotate_RH(state.ry, V3(0.0f, 1.0f, 0.0f));
     Mat4 model = MulM4(rotate_x, rotate_y);
@@ -166,12 +149,10 @@ void frame(void) {
     sg_draw(0, 36, 1);
     sg_end_pass();
     sg_commit();
-    
 }
 
-// freeing
 void cleanup(void) {
-    printf("[DEBUG] Freeing memory.\n");
+    printf("Shutting down...\n");
     sg_shutdown();
 }
 
